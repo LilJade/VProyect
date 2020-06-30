@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="VetOnline">
+		<class>com.vp.model.Adopcionvp</class>
+		<class>com.vp.model.Agendamascotasvp</class>
+		<class>com.vp.model.Consultavp</class>
+		<class>com.vp.model.Dueniovp</class>
+		<class>com.vp.model.Especievp</class>
+		<class>com.vp.model.Mascotavp</class>
+		<class>com.vp.model.Priviligeduservp</class>
+		<class>com.vp.model.Productosventavp</class>
+		<class>com.vp.model.Razavp</class>
+		<class>com.vp.model.Veterinariosvp</class>
+	</persistence-unit>
+</persistence>
