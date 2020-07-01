@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	background-color: #a6dcef;
+}
+
+.logo{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 25%;
+	margin-left: 40px;
+}
+
+.logo img{
+	width: 100px;
+	margin-right: 20px;
+}
+
+.logo a{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 42px;
+	color: #383e56;
+}
+
+.menu{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+}
+
+.menu ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#LogInItem{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#mP{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.menu ul li{
+	list-style-type: none;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.menu ul hr{
+	margin: 0;
+	border: none;
+	border-left: 1px solid #e36387;
+	height: 30px;
+	width: 1px;
+}
+
+.menu ul li a{
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 22px;
+	color: #383e56;
+}
+
+.menu ul li a:hover{
+	color: #e84a5f;
+	cursor: pointer;
+}
+
+.subMenu{
+	padding: 10px;
+	background-color: #a6dcef;
+	border-radius: 6px;
+	box-shadow: -15px 15px 35px 1px rgba(0,0,0,0.4);
+}
+
+.subMenu li{
+	list-style-type: none;
+	margin: 12px 20px;
+}
+
+.menu ul li .subMenu{
+	display: none;
+	position: absolute;
+}
+
+.menu ul li:hover > .subMenu{
+	display: block;
+}

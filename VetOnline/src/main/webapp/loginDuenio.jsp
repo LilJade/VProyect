@@ -36,7 +36,7 @@
 				<div id="LogInItem">
 					<hr>
 					<li>
-						<a href="loginDuenio.jsp">Iniciar Sesión</a>
+						<a href="loginDuenio.jsp"><strong>Iniciar Sesión</strong></a>
 					</li>
 					<hr>
 					<li>
