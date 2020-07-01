@@ -110,3 +110,140 @@ header{
 .menu ul li:hover > .subMenu{
 	display: block;
 }
+
+
+/*
+
+Ventana flotante para iniciar sesion(Dueños)
+
+*/
+
+.logIn{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35%;
+	border: 1px solid #000;
+	margin: 70px 0;
+	background-color: #FFF;
+	position: absolute;
+	left: 33%;
+	top: 10%;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.logIn .logo{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.logIn .logo img{
+	width: 90px;
+}
+
+.logIn .logo h2{
+	font-weight: bold;
+	font-size: 36px;
+	color: #383e56;
+}
+
+.logIn form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.logIn form .lbl{
+	text-align: left;
+	width: 72%;
+	font-size: 18px;
+	color: #383e56;
+}
+
+.logIn form .txt{
+	padding: 5px;
+	width: 70%;
+	font-size: 18px;
+	color: #383e56;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-bottom: 20px;
+	margin-top: 3px;
+}
+
+.logIn form .regAnun{
+	margin-top: 10px;
+}
+
+.logIn form .regAnun .reg{
+	text-decoration: none;
+	color: #383e56;
+}
+
+.logIn form .regAnun .reg:hover{
+	text-decoration: underline;
+	color: #000;
+}
+
+.logIn form .botones{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.logIn form .botones .btnOk{
+	font-weight: bold;
+	width: 30%;
+	padding: 10px;
+	font-size: 18px;
+	background-color: #79d70f;
+	border-radius: 20px;
+	border: none;
+	color: #FFF;
+}
+
+.logIn form .botones .btnOk:hover{
+	background-color: #b6eb7a;
+	color: #000;
+	cursor: pointer;
+}
+
+.logIn form .botones .btnCancel{
+	text-align: center;
+	font-weight: bold;
+	width: 30%;
+	padding: 10px;
+	font-size: 18px;
+	background-color: #d32626;
+	border-radius: 20px;
+	border: none;
+	color: #FFF;
+}
+
+.logIn form .botones .btnCancel:hover{
+	background-color: #ff847c;
+	color: #000;
+	cursor: pointer;
+}
+
+#windPop{
+	animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{transform: opacity: 1}
+}
