@@ -6,6 +6,30 @@
 <link rel="stylesheet" type="text/css" href="css/head&footStyle.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#windPop').hide();
+			$('#vete').hide();
+			
+			$('#mostrar').click(function() {
+				$('#vete').hide();
+				$('#windPop').show();
+			});
+
+			$('#ocultar').click(function() {
+				$('#windPop').fadeOut();
+			});
+
+			$('#entrar').click(function() {
+				$('#windPop').hide();
+				$('#vete').show();
+			});
+
+			$('#noEntrar').click(function() {
+				$('#vete').fadeOut();
+			});
+		});
+	</script>
 <body>
 	<header>
 		<div class="logIn" id="windPop">
@@ -13,17 +37,15 @@
 				<img src="img/039-pet-house.png">
 				<h2>Iniciar Sesión</h2>
 			</div>
-			<form>
-				<label class="lbl">Ingresa tu Correo Electrónico: </label> <input
-					type="text" class="txt" placeholder="tuCorreo@ejemplo.com">
-				<label class="lbl">Escribe tu contraseña: </label> <input
-					type="password" class="txt"
-					placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;">
-				<span class="regAnun">¿No tienes una cuenta? <a href=""
-					class="reg">Regístrate aquí</a></span>
+			<form action="servletDuenio" method="post">
+				<label class="lbl">Ingresa tu Correo Electrónico: </label>
+				<input type="text" class="txt" placeholder="tuCorreo@ejemplo.com" name="txtCorreo">
+				<label class="lbl">Escribe tu contraseña: </label>
+				<input type="password" class="txt" placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;" name="txtPass">
+				<span class="regAnun">¿No tienes una cuenta? <a href="" class="reg">Regístrate aquí</a></span>
 				<div class="botones">
-					<input type="submit" class="btnOk" value="Ingresar"> <span
-						class="btnCancel" id="ocultar">Cancelar</span>
+					<input type="submit" class="btnOk" value="Ingresar" name="btn">
+					<span class="btnCancel" id="ocultar">Cancelar</span>
 				</div>
 			</form>
 		</div>
@@ -59,22 +81,6 @@
 	</header>
 	<div class="content"></div>
 	<footer></footer>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#windPop').hide();
-
-			$('#mostrar').click(function() {
-				$('#windPop').show();
-			});
-
-			$('#ocultar').click(function() {
-				$('#windPop').fadeOut();
-			});
-		});
-	</script>
-	
-	
-	
 	<div class="logov" id="vete">
 			<div class="logo">
 				<img src="img/005-veterinary-1.png">
@@ -86,28 +92,11 @@
 				<label class="lbl">Contraseña: </label> <input
 					type="password" class="txt"
 					placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;">
-				<span class="regAnun"> <a href=""class="reg">Regístrate aquí</a> </span>
 				<div class="botones">
 					<input type="submit" class="btnOk" value="Ingresar"> <span
 						class="btnCancel" id="noEntrar">Cancelar</span>
 				</div>
 			</form>
 		</div>
-		
-		
-		<script type="text/javascript">
-		$(document).ready(function() {
-			$('#vete').hide();
-
-			$('#entrar').click(function() {
-				$('#vete').show();
-			});
-
-			$('#noEntrar').click(function() {
-				$('#vete').fadeOut();
-			});
-		});
-	</script>
-	
 </body>
 </html>
