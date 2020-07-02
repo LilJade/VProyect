@@ -56,7 +56,7 @@ public class servletDuenio extends HttpServlet {
 			if(size == 1) {
 				HttpSession validacion = request.getSession(true);
 				validacion.setAttribute("idDueño", d.getIdDVP());
-				response.sendRedirect("perfilDuenio.jsp");
+				response.sendRedirect("index.jsp");
 			} else {
 				System.out.println("Ah ocurrido un error...\n¿En dónde? No sabemos...");
 			}

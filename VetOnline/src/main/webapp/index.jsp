@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="com.vp.model.Dueniovp"%>
+<%@page import="com.vp.dao.duenioDao"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,10 +8,22 @@
 <link rel="stylesheet" type="text/css" href="css/head&footStyle.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
+<%
+	HttpSession verificacion = (HttpSession) request.getSession();
+	String variableSesion = String.valueOf(verificacion.getAttribute("idDueño"));
+%>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#windPop').hide();
 			$('#vete').hide();
+			$('#mP').hide();
+			
+			var validandoSesion = "<%= variableSesion %>";
+			
+			if(validandoSesion.length > 0 && validandoSesion != null && validandoSesion != "null"){
+				$('#mP').show();
+				$('#LogInItem').hide();
+			}
 			
 			$('#mostrar').click(function() {
 				$('#vete').hide();
@@ -70,12 +84,12 @@
 					<hr>
 					<li><a href="">Registrarse</a></li>
 				</div>
-				<!--				<div id="mP">
+				<div id="mP">
 					<hr>
 					<li>
 						<a href="">Mi Perfil</a>
 					</li>
-				</div>-->
+				</div>
 			</ul>
 		</div>
 	</header>
