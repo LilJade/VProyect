@@ -39,7 +39,7 @@
 				<hr>
 				<li><a href="">Soy Veterinario &#x25BE;</a>
 					<ul class="subMenu">
-						<li><a href="">Iniciar Sesión</a></li>
+						<li><a id="entrar">Iniciar Sesión</a></li>
 						<li><a href="">Contactar Veterinaria</a></li>
 					</ul></li>
 				<div id="LogInItem">
@@ -72,5 +72,42 @@
 			});
 		});
 	</script>
+	
+	
+	
+	<div class="logov" id="vete">
+			<div class="logo">
+				<img src="img/005-veterinary-1.png">
+				<h2>Iniciar Sesión</h2>
+			</div>
+			<form>
+				<label class="lbl">Correo Electrónico: </label> <input
+					type="text" class="txt" placeholder="tu Correo">
+				<label class="lbl">Contraseña: </label> <input
+					type="password" class="txt"
+					placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;">
+				<span class="regAnun"> <a href=""class="reg">Regístrate aquí</a> </span>
+				<div class="botones">
+					<input type="submit" class="btnOk" value="Ingresar"> <span
+						class="btnCancel" id="noEntrar">Cancelar</span>
+				</div>
+			</form>
+		</div>
+		
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#vete').hide();
+
+			$('#entrar').click(function() {
+				$('#vete').show();
+			});
+
+			$('#noEntrar').click(function() {
+				$('#vete').fadeOut();
+			});
+		});
+	</script>
+	
 </body>
 </html>

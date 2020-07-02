@@ -247,3 +247,140 @@ Ventana flotante para iniciar sesion(Dueños)
 	0%{opacity: 0;}
 	100%{transform: opacity: 1}
 }
+
+/*
+Ventana flotante para iniciar sesion(veterinario)
+*/
+
+
+.logov{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35%;
+	border: 5px solid #000;
+	margin: 70px 0;
+	background-color: #a6e3e9;
+	position: absolute;
+	left: 33%;
+	top: 10%;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.logov .logo{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.logov .logo img{
+	width: 90px;
+}
+
+.logov .logo h2{
+	font-weight: bold;
+	font-size: 36px;
+	color: #383e56;
+}
+
+.logov form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.logov form .lbl{
+	text-align: left;
+	width: 72%;
+	font-size: 18px;
+	color: #383e56;
+}
+
+.logov form .txt{
+	padding: 5px;
+	width: 70%;
+	font-size: 18px;
+	color: #383e56;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-bottom: 20px;
+	margin-top: 3px;
+}
+
+.logov form .regAnun{
+	margin-top: 10px;
+}
+
+.logov form .regAnun .reg{
+	text-decoration: none;
+	color: #383e56;
+}
+
+.logov form .regAnun .reg:hover{
+	text-decoration: underline;
+	color: #000;
+}
+
+.logov form .botones{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.logov form .botones .btnOk{
+	font-weight: bold;
+	width: 30%;
+	padding: 10px;
+	font-size: 18px;
+	background-color: #79d70f;
+	border-radius: 20px;
+	border: none;
+	color: #FFF;
+}
+
+.logov form .botones .btnOk:hover{
+	background-color: #b6eb7a;
+	color: #000;
+	cursor: pointer;
+}
+
+.logov form .botones .btnCancel{
+	text-align: center;
+	font-weight: bold;
+	width: 30%;
+	padding: 10px;
+	font-size: 18px;
+	background-color: #d32626;
+	border-radius: 20px;
+	border: none;
+	color: #FFF;
+}
+
+.logov form .botones .btnCancel:hover{
+	background-color: #ff847c;
+	color: #000;
+	cursor: pointer;
+}
+
+#vete{
+	animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{transform: opacity: 1}
+}
+
+
