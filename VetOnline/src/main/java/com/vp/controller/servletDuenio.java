@@ -44,8 +44,6 @@ public class servletDuenio extends HttpServlet {
 		String pass = request.getParameter("txtPass");
 		String boton = request.getParameter("btn");
 		
-		System.out.println(correo + " " + pass);
-		
 		if(boton.equals("Ingresar")) {
 			Dueniovp d = new Dueniovp();
 			duenioDao dD = new duenioDao();
@@ -56,7 +54,9 @@ public class servletDuenio extends HttpServlet {
 			int size = dD.logInDuenio(d).size();
 						
 			if(size == 1) {
-				System.out.println("En teoría, has iniciado sesion");
+				HttpSession validacion = request.getSession(true);
+				validacion.setAttribute("idDueño", d.getIdDVP());
+				response.sendRedirect("perfilDuenio.jsp");
 			} else {
 				System.out.println("Ah ocurrido un error...\n¿En dónde? No sabemos...");
 			}
