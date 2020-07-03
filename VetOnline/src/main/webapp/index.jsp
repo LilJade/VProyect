@@ -7,11 +7,20 @@
 <title></title>
 <link rel="stylesheet" type="text/css" href="css/head&footStyle.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+
+
 </head>
 <%
 	HttpSession verificacion = (HttpSession) request.getSession();
 	String variableSesion = String.valueOf(verificacion.getAttribute("idDueño"));
 %>
+
+
+
+
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#windPop').hide();
@@ -100,17 +109,19 @@
 				<img src="img/005-veterinary-1.png">
 				<h2>Iniciar Sesión</h2>
 			</div>
-			<form>
-				<label class="lbl">Correo Electrónico: </label> <input
-					type="text" class="txt" placeholder="tu Correo">
-				<label class="lbl">Contraseña: </label> <input
-					type="password" class="txt"
-					placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;">
+			<form action="ServletVeterinario" method="post">
+				<label class="lbl">Correo Electrónico: </label> 
+				<input type="text" class="txt" placeholder="tu Correo" name="correo">
+				
+				<label class="lbl">Contraseña: </label> 
+				<input type="password" class="txt" placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;" name="contra">
 				<div class="botones">
 					<input type="submit" class="btnOk" value="Ingresar"> <span
 						class="btnCancel" id="noEntrar">Cancelar</span>
 				</div>
 			</form>
 		</div>
+		
+
 </body>
 </html>
