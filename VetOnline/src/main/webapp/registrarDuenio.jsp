@@ -11,6 +11,12 @@
 <%
 	HttpSession verificacion = (HttpSession) request.getSession();
 	String variableSesion = String.valueOf(verificacion.getAttribute("idDueño"));
+	
+	if(variableSesion == null || variableSesion.equals("null")){
+
+	} else {
+		response.sendRedirect("perfilDuenio.jsp");
+	}
 %>
 
 <script type="text/javascript">
@@ -98,6 +104,9 @@
 		</div>
 	</header>
 	<div class="content">
+	<form action="">
+		
+	</form>
 	</div>
 	<footer></footer>
 	<div class="logov" id="vete">
