@@ -21,6 +21,12 @@
 		<description></description>
 		<servlet-class>com.vp.controller.ServletVeterinario</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>servletRegDue</servlet-name>
+		<display-name>servletRegDue</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletRegDue</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -32,5 +38,9 @@
 	<servlet-mapping>
 		<servlet-name>ServletVeterinario</servlet-name>
 		<url-pattern>/ServletVeterinario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletRegDue</servlet-name>
+		<url-pattern>/servletRegDue</url-pattern>
 	</servlet-mapping>
 </web-app>

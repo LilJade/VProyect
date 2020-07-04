@@ -77,7 +77,6 @@
 			if(e.length > 1 && d.length > 10 && t.length == 8){
 					$('#seccion2').hide();
 					$('#seccion3').show();
-					$('#finish').prop('disabled', false);
 			} else {
 				alert('Debes cumplir con los requesitos solicitados en cada campo.');
 			}
@@ -105,9 +104,15 @@
 				$('#finish').show();
 			}
 		}
+		
+		$('#finish').click(function(){
+			$('#seccion3').show();
+			$('#seccion2').show();
+			$('#seccion1').show();
+		});
 	});
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(window).load(function() {
 
 		$(function() {
@@ -132,25 +137,9 @@
 			}
 		});
 	});
-</script><body>
+</script>  -->
+<body>
 	<header>
-		<div class="logIn" id="windPop">
-			<div class="logo">
-				<img src="img/039-pet-house.png">
-				<h2>Iniciar Sesión</h2>
-			</div>
-			<form action="servletDuenio" method="post">
-				<label class="lbl">Ingresa tu Correo Electrónico: </label>
-				<input type="text" class="txt" placeholder="tuCorreo@ejemplo.com" name="txtCorreo">
-				<label class="lbl">Escribe tu contraseña: </label>
-				<input type="password" class="txt" placeholder="&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;&#x25CF;" name="txtPass">
-				<span class="regAnun">¿No tienes una cuenta? <a href="registrarDuenio.jsp" class="reg">Regístrate aquí</a></span>
-				<div class="botones">
-					<input type="submit" class="btnOk" value="Ingresar" name="btn">
-					<span class="btnCancel" id="ocultar">Cancelar</span>
-				</div>
-			</form>
-		</div>
 		<div class="logo">
 			<img src="img/039-pet-house.png"> <a href="index.jsp">Happy
 				Pet</a>
@@ -165,19 +154,8 @@
 					<ul class="subMenu">
 						<li><a id="entrar">Iniciar Sesión</a></li>
 						<li><a href="">Contactar Veterinaria</a></li>
-					</ul></li>
-				<div id="LogInItem">
-					<hr>
-					<li><a id="mostrar">Iniciar Sesión</a></li>
-					<hr>
-					<li><a href="registrarDuenio.jsp">Registrarse</a></li>
-				</div>
-				<div id="mP">
-					<hr>
-					<li>
-						<a href="perfilDuenio.jsp">Mi Perfil</a>
-					</li>
-				</div>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</header>
@@ -187,18 +165,17 @@
 			<h4>Registrate y crea un perfil para tus mascotas</h4>
 		</div>
 		<div class="registro">
-			<form>
+			<form action="servletRegDue" method="post">
 				<div class="seccion" id="seccion1">
 					<div class="encabezado">
-						<img id="foto" src="img/persona.png">
-						<span>Selecciona una foto de perfil si así lo deseas</span>
-						<input type="file" class="inp" name="foto" id="fotoPerfil">
+						<img id="foto" src="img/personaIcon.png">
+						<span class="ant">Para registrarte ingresa los siguientes datos</span>
 					</div>
 					<div class="datos">
 						<label class="title">Nombres: </label>
-						<input type="text" class="control" id="nombres" name="" placeholder="Escribe ambos nombres aquí..." maxlength="20" pattern="[A-Za-z]{3,20}" title="Tus nombres deben tener entre 3 y 40 letras" required>
+						<input type="text" class="control" id="nombres" name="txtnombres" placeholder="Escribe ambos nombres aquí..." maxlength="20" pattern="[A-Za-z]{3,20}" title="Tus nombres deben tener entre 3 y 40 letras" required>
 						<label class="title">Apellidos: </label>
-						<input type="text" class="control" id="apellidos" name="" placeholder="Escribe ambos apellidos aquí..." maxlength="20" pattern="[A-Za-z]{3,20}" title="Tus apellidos deben tener entre 3 y 40 letras" required>
+						<input type="text" class="control" id="apellidos" name="txtapellidos" placeholder="Escribe ambos apellidos aquí..." maxlength="20" pattern="[A-Za-z]{3,20}" title="Tus apellidos deben tener entre 3 y 40 letras" required>
 					</div>
 					<div class="continue" id="continue1">
 						<a href= "index.jsp" class="btn Cancel">Cancelar</a>
@@ -212,11 +189,11 @@
 					</div>
 					<div class="datos">
 						<label class="title">Edad: </label>
-						<input type="number" class="control" id="edad" name="" placeholder="Selecciona tu edad..." min="18" max="99" title="Seleccione una edad entre 18 y 99" required pattern="[0-9]{2}">
+						<input type="number" class="control" id="edad" name="txtedad" placeholder="Selecciona tu edad..." min="18" max="99" title="Seleccione una edad entre 18 y 99" required pattern="[0-9]{2}">
 						<label class="title">Direccion: </label>
-						<input type="text" class="control" id="direccion" name="" placeholder="Escribe tu dirección..." maxlength="250" title="introducir entre 10 y 250 letras" required>
+						<input type="text" class="control" id="direccion" name="txtdireccion" placeholder="Escribe tu dirección..." maxlength="250" title="introducir entre 10 y 250 letras" required>
 						<label class="title">Teléfono: </label>
-						<input type="text" class="control" id="telefono" name="" placeholder="Escribe tu numero telefónico..." maxlength="8" pattern="[0-9]{8}" title="introducir número telefonico de 8 cifras" required>
+						<input type="text" class="control" id="telefono" name="txttelefono" placeholder="Escribe tu numero telefónico..." maxlength="8" pattern="[0-9]{8}" title="introducir número telefonico de 8 cifras" required>
 					</div>
 					<div class="continue" id="continue2">
 						<a href= "index.jsp" class="btn Cancel">Cancelar</a>
@@ -231,16 +208,16 @@
 					</div>
 					<div class="datos">
 						<label class="title">Correo Electrónico: </label>
-						<input type="text" class="control" id="correo" name="" placeholder="Escribe tu correo electrónico..." maxlength="140" pattern="[a-z-0-9]+@+[a-z]+.+[a-z]" title="Ingrese su dirección de correo electrónico. Ejemplo: alguien@dominio.com" required>
+						<input type="text" class="control" id="correo" name="textcorreo" placeholder="Escribe tu correo electrónico..." maxlength="140" pattern="[a-z-0-9]+@+[a-z]+.+[a-z]" title="Ingrese su dirección de correo electrónico. Ejemplo: alguien@dominio.com" required>
 						<label class="title">Contraseña: </label>
-						<input type="password" class="control" id="pass" name="" placeholder="Escribe tu contraseña..." maxlength="20" min="4" max="20"  title="Debe introducir una contraseña entre 4 y 16 digitos" pattern="[a-z-0-9]{4,20}" required>
+						<input type="password" class="control" id="pass" name="textcontra" placeholder="Escribe tu contraseña..." maxlength="20" min="4" max="20"  title="Debe introducir una contraseña entre 4 y 16 digitos" pattern="[a-z-0-9]{4,20}" required>
 						<label class="title">Confirmación de contraseña: </label>
-						<input type="password" class="control" id="pass2" name="" placeholder="Reescribe tu contraseña...">
+						<input type="password" class="control" id="pass2" placeholder="Reescribe tu contraseña...">
 					</div>
 					<div class="continue">
 						<a href= "index.jsp" class="btn Cancel">Cancelar</a>
 						<span class="btn Cancel" id="btnCancel3">Regresar</span>
-						<input type="submit" class="btn Finish" id="finish" name="" value="Registrarme">
+						<input type="submit" name="btnReg" value="Registrarme" class="btn Finish" id="finish">
 					</div>
 				</div>
 			</form>

@@ -3,8 +3,6 @@ package com.vp.controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,15 +15,15 @@ import com.vp.dao.duenioDao;
 import com.vp.model.Dueniovp;
 
 /**
- * Servlet implementation class servletDuenio
+ * Servlet implementation class servletRegDue
  */
-public class servletDuenio extends HttpServlet {
+public class servletRegDue extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletDuenio() {
+    public servletRegDue() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,33 +40,38 @@ public class servletDuenio extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String correo = request.getParameter("txtCorreo");
-		String pass = request.getParameter("txtPass");		
-		String boton = request.getParameter("btn");
-		
-		if(boton.equals("Ingresar")) {
-			
+
+		String btn = request.getParameter("btnReg");
+		String nombres = request.getParameter("txtnombres");
+		String apellidos = request.getParameter("txtapellidos");
+		String edad = request.getParameter("txtedad");
+		String direccion = request.getParameter("txtdireccion");
+		String telefono = request.getParameter("txttelefono");
+		String correo = request.getParameter("textcorreo");
+		String contra = request.getParameter("textcontra");		
+
+		if(btn.equals("Registrarme")) {
 			Dueniovp d = new Dueniovp();
 			duenioDao dD = new duenioDao();
-			
-			d.setCorreoDVP(correo);
-			d.setContraDVP(pass);
-			
-			int size = dD.logInDuenio(d).size();
 						
-			if(size == 1) {
+			d.setNombresDVP(nombres);
+			d.setApellidosDVP(apellidos);
+			d.setFotoDVP("imgU/persona.png");
+			d.setEdadDVP(Integer.parseInt(edad));
+			d.setDireccionDVP(direccion);
+			d.setTelefonoDVP(telefono);
+			d.setCorreoDVP(correo);
+			d.setContraDVP(contra);
+			
+			dD.registrarDuenio(d);
+			
+			int login = dD.logInDuenio(d).size();
+			
+			if(login == 1) {
 				HttpSession validacion = request.getSession(true);
 				validacion.setAttribute("idDueño", d.getIdDVP());
 				response.sendRedirect("perfilDuenio.jsp");
-			} else {
-				System.out.println("Ah ocurrido un error...\n¿En dónde? No sabemos...");
 			}
-		} else if(boton.equals("Cerrar Sesión")) {
-			HttpSession close = (HttpSession) request.getSession();
-			close.invalidate();
-			
-			System.out.println("Cerraste Sesion");
-			response.sendRedirect("index.jsp");
 		}
 	}
 

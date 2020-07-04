@@ -50,4 +50,20 @@ public class duenioDao {
 		
 		return duenio;
 	}
+	
+	public void registrarDuenio(Dueniovp dvp) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			em.persist(dvp);
+			em.flush();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
