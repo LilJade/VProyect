@@ -1,0 +1,139 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+}
+
+.contenidoActivo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 65%;
+}
+
+.dataUser{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	align-self: flex-start;
+	margin-top: 40px;
+}
+
+.dataUser .fotoUser{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 0.2px solid gray;
+	border-radius: 20px;
+}
+
+.dataUser .fotoUser img{
+	width: 50%;
+	height: 60%;
+	border-radius: 150px;
+	border: 1px solid gray;
+}
+
+.dataUser .fotoUser .btnChange{
+	background-color: #b6eb7a;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 15px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.dataUser .fotoUser .btnChange:hover{
+	background-color: #17706e;
+	color: #FFF;
+}
+
+.dataUser .infoUser{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 0.2px solid gray;
+	border-radius: 20px;
+}
+
+.dataUser .infoUser h3{
+	text-align: left;
+	width: 100%;
+	margin-bottom: 3px;
+	font-size: 20px;
+}
+
+.dataUser .infoUser h4, h5{
+	text-align: left;
+	width: 100%;
+	margin-bottom: 8px;
+	font-weight: normal;
+	font-size: 16px;
+	color: #706c61;
+}
+
+.seccion{
+	margin: 30px;
+}
+
+.option{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	border: 0.2px solid gray;
+	border-radius: 20px;
+}
+
+.option form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+}
+
+.option form .btnClose{
+	font-size: 18px;
+	background-color: #c10000;
+	color: #FFF;
+	border-radius: 20px;
+	border: none;
+	width: 100%;
+	padding: 10px;
+}
+
+.option form .btnClose:hover{
+	background-color: #ff4949;
+	color: #FFF;
+	cursor: pointer;
+}

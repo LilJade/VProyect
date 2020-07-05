@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<link rel="stylesheet" type="text/css" href="css/perfilDuenioStyle.css">
 <link rel="stylesheet" type="text/css" href="css/head&footStyle.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/headerValidate.js"></script>
@@ -24,6 +25,11 @@
 			 request.setAttribute("id", duenio.getIdDVP());
 			 request.setAttribute("nombres", duenio.getNombresDVP());
 			 request.setAttribute("apellidos", duenio.getApellidosDVP());
+			 request.setAttribute("foto", duenio.getFotoDVP());
+			 request.setAttribute("edad", duenio.getEdadDVP());
+			 request.setAttribute("telefono", duenio.getTelefonoDVP());
+			 request.setAttribute("correo", duenio.getCorreoDVP());
+			 request.setAttribute("direccion", duenio.getDireccionDVP());
 		 }
 	}
 %>
@@ -53,13 +59,52 @@
 			</ul>
 		</div>
 	</header>
-
-	<h3>ID: <%out.println(request.getAttribute("id"));%></h3>
-	<h3>Nombres: <%out.println(request.getAttribute("nombres"));%></h3>
-	<h3>Apellidos: <%out.println(request.getAttribute("apellidos"));%></h3>
-	
-	<form action="servletDuenio" method="post">
-		<input type="submit" value="Cerrar Sesión" name="btn">
-	</form>
+	<div class="content">
+		<div class="container">
+			<div class="contenidoActivo">
+				<div class="seccion">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="seccion">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="seccion">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<div class="dataUser">
+				<div class="fotoUser">
+					<img src="<%out.println(request.getAttribute("foto"));%>" id="fotoPerfil">
+				</div>
+				<div class="infoUser">
+					<h3><%out.println(request.getAttribute("nombres"));%><%out.println(request.getAttribute("apellidos"));%></h4>
+					<h4>Correo: <%out.println(request.getAttribute("correo"));%></h4>
+					<h4>Telefono: <%out.println(request.getAttribute("telefono"));%></h4>
+					<h4>Edad: <%out.println(request.getAttribute("edad"));%> años</h4>
+					<h5>Direccion: <%out.println(request.getAttribute("direccion"));%></h5>
+				</div>
+				<div class="option">
+					<form action="servletDuenio" method="post">
+						<input type="submit" value="Cerrar Sesión" name="btn" class="btnClose">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
