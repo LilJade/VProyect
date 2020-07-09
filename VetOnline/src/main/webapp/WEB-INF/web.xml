@@ -27,6 +27,12 @@
 		<description></description>
 		<servlet-class>com.vp.controller.servletRegDue</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>servletChangeImgDuenio</servlet-name>
+		<display-name>servletChangeImgDuenio</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletChangeImgDuenio</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -42,5 +48,9 @@
 	<servlet-mapping>
 		<servlet-name>servletRegDue</servlet-name>
 		<url-pattern>/servletRegDue</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletChangeImgDuenio</servlet-name>
+		<url-pattern>/servletChangeImgDuenio</url-pattern>
 	</servlet-mapping>
 </web-app>

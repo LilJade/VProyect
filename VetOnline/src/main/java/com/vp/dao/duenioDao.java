@@ -66,4 +66,30 @@ public class duenioDao {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	 public void cambiarFoto(Dueniovp d){
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf= Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		d.getIdDVP();
+		d.getNombresDVP();
+		d.getApellidosDVP();
+		d.getEdadDVP();
+		d.getDireccionDVP();
+		d.getTelefonoDVP();
+		d.getCorreoDVP();
+		d.getContraDVP();
+		d.getFotoDVP();
+		
+		try {
+			em.getTransaction().begin();
+			em.merge(d);
+			em.flush();
+			em.getTransaction().commit();		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

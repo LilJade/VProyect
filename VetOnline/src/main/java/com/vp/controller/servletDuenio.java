@@ -2,7 +2,11 @@ package com.vp.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,12 +45,12 @@ public class servletDuenio extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String correo = request.getParameter("txtCorreo");
-		String pass = request.getParameter("txtPass");		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String boton = request.getParameter("btn");
 		
 		if(boton.equals("Ingresar")) {
+			String correo = request.getParameter("txtCorreo");
+			String pass = request.getParameter("txtPass");
 			
 			Dueniovp d = new Dueniovp();
 			duenioDao dD = new duenioDao();
@@ -69,6 +73,34 @@ public class servletDuenio extends HttpServlet {
 			
 			System.out.println("Cerraste Sesion");
 			response.sendRedirect("index.jsp");
+		} else if(boton.equals("Guardar Cambios")) {
+			HttpSession verificacion = (HttpSession) request.getSession();
+			String variableSesion = String.valueOf(verificacion.getAttribute("idDueño"));
+			Dueniovp d = new Dueniovp();
+			duenioDao dD = new duenioDao();
+			
+			String nombres = request.getParameter("ciNombres2");
+			String apellidos = request.getParameter("ciApellidos2");
+			String edad = request.getParameter("ciEdad2");
+			String direccion = request.getParameter("ciDireccion2");
+			String telefono = request.getParameter("ciCel2");
+			String correo = request.getParameter("ciCorreo2");
+			String contra = request.getParameter("ciContra2");
+			String foto = request.getParameter("ciFoto2");
+			
+			d.setIdDVP(Integer.parseInt(variableSesion));
+			d.setNombresDVP(nombres);
+			d.setApellidosDVP(apellidos);
+			d.setEdadDVP(Integer.parseInt(edad));
+			d.setDireccionDVP(direccion);
+			d.setTelefonoDVP(telefono);
+			d.setCorreoDVP(correo);
+			d.setContraDVP(contra);
+			d.setFotoDVP(foto);
+			
+			dD.cambiarFoto(d);
+			
+			response.sendRedirect("perfilDuenio.jsp");
 		}
 	}
 
