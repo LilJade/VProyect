@@ -33,6 +33,12 @@
 		<description></description>
 		<servlet-class>com.vp.controller.servletChangeImgDuenio</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>servletPrivUser</servlet-name>
+		<display-name>servletPrivUser</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletPrivUser</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -52,5 +58,9 @@
 	<servlet-mapping>
 		<servlet-name>servletChangeImgDuenio</servlet-name>
 		<url-pattern>/servletChangeImgDuenio</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletPrivUser</servlet-name>
+		<url-pattern>/servletPrivUser</url-pattern>
 	</servlet-mapping>
 </web-app>
