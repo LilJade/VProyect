@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
+import com.vp.model.Razavp;
 import com.vp.model.Veterinariosvp;
 
 public class veterinarioDao {
@@ -40,5 +40,24 @@ public class veterinarioDao {
 		return vete;
 	}
 		
+	public List<Veterinariosvp> vetsLista (){
+		List<Veterinariosvp> listaVets = new ArrayList<>();
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			
+			listaVets = em.createQuery("from Veterinariosvp").getResultList();
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return listaVets;
+	}
 	
 }

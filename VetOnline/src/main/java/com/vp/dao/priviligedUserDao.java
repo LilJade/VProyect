@@ -49,4 +49,24 @@ public class priviligedUserDao {
 		
 		return Userpv;
 	}
+	
+	public List<Priviligeduservp> modsLista (){
+		List<Priviligeduservp> listaMods = new ArrayList<>();
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			
+			listaMods = em.createQuery("from Priviligeduservp WHERE accessPVP = 1").getResultList();
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return listaMods;
+	}
 }

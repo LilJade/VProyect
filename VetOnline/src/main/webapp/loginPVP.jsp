@@ -24,7 +24,7 @@
 	</header>
 	<div class="content">
 		<form class="loginBox" action="servletPrivUser" method="post">
-			<img class="img" src="ajustes.png">
+			<img class="img" src="img/engranajeCircle.png">
 			<input class="text" type="text" name="correoPv" placeholder="Ingrese aquí el correo">
 			<input class="text" type="password" name="passPv" placeholder="Ingrese aquí la contraseña">
 			<input class="btn" type="submit" name="btn" value="Iniciar Sesion">
