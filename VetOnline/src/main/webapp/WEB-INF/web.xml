@@ -39,6 +39,24 @@
 		<description></description>
 		<servlet-class>com.vp.controller.servletPrivUser</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>crudModeradores</servlet-name>
+		<display-name>crudModeradores</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.crudModeradores</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>servletModCrud</servlet-name>
+		<display-name>servletModCrud</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletModCrud</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>servletMostrarMod</servlet-name>
+		<display-name>servletMostrarMod</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletMostrarMod</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -62,5 +80,17 @@
 	<servlet-mapping>
 		<servlet-name>servletPrivUser</servlet-name>
 		<url-pattern>/servletPrivUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>crudModeradores</servlet-name>
+		<url-pattern>/crudModeradores</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletModCrud</servlet-name>
+		<url-pattern>/servletModCrud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletMostrarMod</servlet-name>
+		<url-pattern>/servletMostrarMod</url-pattern>
 	</servlet-mapping>
 </web-app>

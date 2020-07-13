@@ -8,9 +8,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import com.vp.model.Dueniovp;
+import com.vp.model.Productosventavp;
 
 public class duenioDao {
-	
+	public List<Dueniovp> dLista (){
+		List<Dueniovp> listad = new ArrayList<>();
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			
+			listad = em.createQuery("from Dueniovp").getResultList();
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return listad;
+	}
+
 	public List<Dueniovp> logInDuenio(Dueniovp d){
 		List<Dueniovp> duenio = new ArrayList<>();
 		EntityManager em;

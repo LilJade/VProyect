@@ -69,4 +69,69 @@ public class priviligedUserDao {
 		
 		return listaMods;
 	}
+	public void agregarModerador(Priviligeduservp pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		em.persist(pr);
+		em.flush();
+		em.getTransaction().commit();
+		
+	}
+	public void actualizarModerador (Priviligeduservp pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		pr.getIdPVP();
+		pr.getNombresPVP();
+		pr.getApellidosPVP();
+		pr.getDireccionPVP();
+		pr.getCorreoPVP();
+		pr.getContraPVP();
+		pr.getAccessPVP();
+		
+		em.getTransaction().begin();
+		em.merge(pr);
+		em.flush();
+		em.getTransaction().commit();
+		
+	}
+
+	public void eliminarModerador (Priviligeduservp pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		pr = em.getReference(Priviligeduservp.class, pr.getIdPVP());
+		em.getTransaction().begin();
+		em.remove(pr);
+		em.flush();
+		em.getTransaction().commit();
+		
+	}
+	public List<Priviligeduservp> listaUservp(){
+		List<Priviligeduservp> userpv = new ArrayList<>();
+		
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			userpv= em.createQuery("SELECT p FROM Priviligeduservp p").getResultList();
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+		System.out.println(e+"Error en el listaUservp");
+		}
+		
+		return userpv;
+	}
 }
