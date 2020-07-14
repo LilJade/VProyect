@@ -57,6 +57,12 @@
 		<description></description>
 		<servlet-class>com.vp.controller.servletMostrarMod</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>servletCrudVete</servlet-name>
+		<display-name>servletCrudVete</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletCrudVete</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -92,5 +98,9 @@
 	<servlet-mapping>
 		<servlet-name>servletMostrarMod</servlet-name>
 		<url-pattern>/servletMostrarMod</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletCrudVete</servlet-name>
+		<url-pattern>/servletCrudVete</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -60,4 +60,26 @@ public class veterinarioDao {
 		return listaVets;
 	}
 	
+	public List<Veterinariosvp> datosVete(String Id){
+		List<Veterinariosvp> vete = new ArrayList<>();
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf = Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		try {
+			em.getTransaction().begin();
+			vete = em.createQuery("FROM Veterinariosvp AS v WHERE idVVP = '" + Id + "'").getResultList();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return vete;
+	}
+	
+	
+	
+	
+	
 }

@@ -78,13 +78,15 @@ public class ServletVeterinario extends HttpServlet {
 				if(verificarUsuario==1) {
 					
 					HttpSession seccion = request.getSession(true);
-					seccion.setAttribute("usuario", correo);
+					//seccion.setAttribute("usuario", correo);
+					seccion.setAttribute("usuario", usua.getIdVVP());
 					
 					response.sendRedirect("perfilVeterinario.jsp");
 				
 					
 				}else {
 					System.out.println("ERROR");
+					response.sendRedirect("index.jsp");
 					
 				}
 					

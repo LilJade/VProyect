@@ -1,0 +1,91 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+Body{
+	background-color:#fff;
+	background-size: cover;
+	 background-image: url("") ;
+}
+
+
+.perfil{
+
+	text-align:center;
+	height:300px;
+	padding:12px;
+	background-image: url("../img/huellas.jpg");
+}
+
+.foto{
+	
+	width: 200px;
+	height: 200px;
+	border-radius: 60px;
+	background-color:black;
+	
+}
+
+
+.boton{
+	
+	position:absolute;
+	top:35px;
+	right:20px;
+}
+
+.boton .b{
+	
+	background-color:#ffdede;
+	padding:12px;
+	border-radius: 10px;
+	width:150px;
+	font-size:20px;
+}
+
+.boton .b:hover{
+	background-color:#d01257;
+	
+}
+
+
+.datos{
+list-style: none;
+text-align: center;
+padding: 10px;
+background-color:#ffdede;
+height:175px;
+
+}
+
+.datos li{
+	display: inline-block;
+	margin: 50px;
+}
+
+h3{
+	color: #fa1616;
+	
+}
+
+.contenedor{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	
+}
+
+.contenedor table{
+	
+margin: 50px;
+padding: 20px;
+}
+
+

@@ -1,0 +1,88 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.contenedor{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	text-align: center;
+	background-color: #fff;
+	border: 5px solid #000;
+	
+}
+
+
+.contenedor .a{
+	margin: 10px;
+	padding: 20px;
+	border-radius: 10px;
+	width: 30%;
+	background-color: #f6bed6;
+}
+
+.contenedor .b{
+	margin: 10px;
+	padding: 20px;
+	border-radius: 10px;
+	width: 30%;
+	background-color: #f6bed6;
+}
+
+.contenedor .c{
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 30%;
+	background-color: #f6bed6;
+		
+}
+
+#boton{
+
+position:relative;
+text-align: center;
+top:85px;
+width: 140px;
+		
+}
+
+.tabla{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+width: 100%;
+text-align: center;
+background-color: #fff;
+border: 5px solid #000;
+	
+}
+
+#tabla{
+margin:15px;	
+	
+}
+
+
+.agregar{
+	
+	margin-left:350px;
+	margin-right:350px;
+	
+}
+
+.datos{
+	
+	margin-left:350px;
+	margin-right:350px;
+}
+
+
+
+
