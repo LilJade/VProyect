@@ -162,7 +162,7 @@
 }
 
 .products .seccionPRD img{
-	width: 50%;
+	width: 30%;
 }
 
 .products .seccionPRD p{
@@ -176,11 +176,200 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	width: 30%;
+	width: 20%;
 }
 
 .Prd{
 	font-size: 20px;
 	width: 60%;
 	margin-top: 10px;
+}
+
+.floatConfig{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	background-color: #FFF;
+	border: 2px solid grey;
+	position: absolute;
+	left: 15%;
+	top: 15%;
+	opacity: 1;
+	transform: scale(1);
+	animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{transform: opacity: 1}
+}
+
+.floatConfig .container-fc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.floatConfig .container-fc .head-fc{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+
+.head-fc .logo-fc{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 15%;
+	padding: 10px;
+}
+
+.head-fc .logo-fc h5{
+	font-size: 18px;
+	text-align: center;
+}
+
+.head-fc .logo-fc img{
+	width: 50px;
+}
+
+.btnClose-fc{
+	text-align: center;
+	font-size: 18px;
+	background-color: #dd2c00;
+	width: 150px;
+	padding: 10px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	color: #FFF;
+	margin-rigth: 30px;
+}
+
+.btnClose-fc:hover{
+	background-color: #ff5722;
+}
+
+/*.closeMe-fc{
+	font-weight: bold;
+	font-size: 24px;
+	color: #000;
+	cursor: pointer;
+}
+
+.closeMe-fc:hover{
+	color: red;
+}*/
+
+.floatConfig .container-fc .activity-fc{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.activity-fc .latMenu-fc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+	border-rigth: 1px solid grey;
+}
+
+.latMenu-fc ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.latMenu-fc ul li{
+	list-style-type: none;
+	width: 100%;
+	padding: 10px;
+}
+
+.latMenu-fc ul li:hover{
+	background-color: grey;
+}
+
+.activity-fc .contenedor-fc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	height: 500px;
+	border-left: 1px solid grey;
+	overflow: auto;
+}
+
+.activity-fc .contenedor-fc .updateData-fc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.frmData{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #e0dede;
+	border-radius: 20px;
+	border: 1px solid blue;
+	width: 65%;
+	margin: 40px 0;
+	padding: 10px;
+	margin-top: 170px;
+}
+
+.frmData .rotulo{
+	text-align: left;
+	font-size: 18px;
+	width: 65%;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+.frmData .control{
+	text-align: left;
+	font-size: 18px;
+	width: 70%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid gray;
+	border-radius: 20px;
+}
+
+.frmData .frmOpt{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+	width: 70%;
+}
+
+.oc-fc{
+	background-color: #79d70f;
+}
+
+.oc-fc:hover{
+	background-color: #438a5e;
 }

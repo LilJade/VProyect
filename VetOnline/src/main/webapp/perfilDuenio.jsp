@@ -33,6 +33,31 @@
 		 }
 	}
 %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$.post('servletCargarMascotas', {}, function(response){
+			let listaMascotas = JSON.parse(response);
+			
+			for(let item of listaMascotas) {
+				var divNuevo = document.createElement("div");
+				var addMascotas = document.getElementById("addMasc");
+
+				divNuevo.classList.add("mascota");
+				divNuevo.innerHTML+=`
+					<img src="${item[2]}">
+					<input type="hidden" value="${item[0]}">
+					<span class="name">${item[1]}</span>
+					<div class="opcionesMascota">
+						<span class="btnOpcion">Agenda</span>
+						<a href="" class="btnOpcion">Ver perfil</a>
+					</div>
+				`
+				document.getElementById("divMasc").insertBefore(divNuevo, addMascotas);
+			}
+		});
+	});
+</script>
 <body>
 	<header>
 		<div class="logo">
@@ -88,6 +113,22 @@
 	<div class="content">
 		<div class="container">
 			<div class="contenidoActivo">
+				<div class="containerDivMascotas" id="divMasc">
+					<!--<div class="mascota">
+						<img src="img/010-cat.png">
+						<span class="name">El doggy</span>
+						<div class="opcionesMascota">
+							<span class="btnOpcion">Agenda</span>
+							<a href="" class="btnOpcion">Ver perfil</a>
+						</div>
+					</div>-->
+					<div class="mascota" id="addMasc">
+						<a href=""><img src="img/mas.png"></a>
+						<div class="opcionesMascota">
+							<a href="" class="btnOpcion">Nueva mascota</a>
+						</div>
+					</div>
+				</div>
 				<div class="seccion">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

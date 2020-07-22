@@ -63,6 +63,24 @@
 		<description></description>
 		<servlet-class>com.vp.controller.servletCrudVete</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>servletCargarMascotas</servlet-name>
+		<display-name>servletCargarMascotas</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletCargarMascotas</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>servletCrudEsp</servlet-name>
+		<display-name>servletCrudEsp</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletCrudEsp</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>servletCrudRz</servlet-name>
+		<display-name>servletCrudRz</display-name>
+		<description></description>
+		<servlet-class>com.vp.controller.servletCrudRz</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servletDuenio</servlet-name>
 		<url-pattern>/servletDuenio</url-pattern>
@@ -102,5 +120,17 @@
 	<servlet-mapping>
 		<servlet-name>servletCrudVete</servlet-name>
 		<url-pattern>/servletCrudVete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletCargarMascotas</servlet-name>
+		<url-pattern>/servletCargarMascotas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletCrudEsp</servlet-name>
+		<url-pattern>/servletCrudEsp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servletCrudRz</servlet-name>
+		<url-pattern>/servletCrudRz</url-pattern>
 	</servlet-mapping>
 </web-app>

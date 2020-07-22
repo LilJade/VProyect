@@ -1,0 +1,232 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #f9d56e;
+	background-image: url("../img/rzEspO.png");
+	background-size: 200px auto;
+	background-repeat: repeat;
+	opacity: 0.9;
+}
+
+.container-esrz{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.table-content{
+	align-self: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin: 10px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	margin-bottom: 200px;
+}
+
+.table-content table{
+	text-align: left;
+	border-collapse: collapse;
+	width: 95%;
+	font-size: 18px;
+}
+
+.table-content table thead{
+	border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+}
+
+.table-content table th,td{
+	padding: 15px;
+}
+
+.table-content table tr:hover td{
+	background-color: rgba(0, 0, 0, 0.2);
+	color: #FFF;
+}
+
+.btnConfc{
+	text-decoration: none;
+	text-align: center;
+	padding: 6px;
+	border-radius: 10px;
+	color: #FFF;
+}
+
+.ed{
+	background-color: #79d70f;
+}
+
+.ed:hover{
+	background-color: #438a5e;
+}
+
+.el{
+	background-color: #d32626;
+}
+
+.el:hover{
+	background-color: #9a1f40;
+}
+
+.newReg{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+.bigBtn-reg{
+	text-decoration: none;
+	text-align: center;
+	width: 40%;
+	font-size: 32px;
+	color: #000;
+	border-radius: 20px;
+	border: 2px solid #000;
+	padding: 10px;
+	margin: 10px;
+	cursor: pointer;
+	transition: all 200ms;
+}
+
+.btnEsp{
+	background-color: #ffbd69;
+}
+
+.btnEsp:hover{
+	transition: all 200ms;
+	transform: scale(1.1);
+	color: #FFF;
+	background-color: #ffa41b;
+	border: 2px solid #ffa41b;
+}
+
+.btnRz{
+	background-color: #b030b0;
+}
+
+.btnRz:hover{
+	transition: all 200ms;
+	transform: scale(1.1);
+	color: #FFF;
+	background-color: #602080;
+	border: 2px solid #602080;
+}
+
+
+
+/*
+
+crudItemsJSP
+
+*/
+
+.containerCrud{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.frmContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	padding: 10px;
+}
+
+.frmContainer form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+form .seccionfrmCR{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	padding: 40px;
+	heigth: 200px;
+	margin: 10px;
+	border-radius: 20px;
+	border: 1px solid #e4e3e3;
+	background-color: #eeeeee;
+}
+
+form .seccionfrmCR .txtCr-E-R{
+	padding: 5px;
+	font-size: 18px;
+	width: 80%;
+	margin-bottom: 15px;
+	background-color: #eeeeee;
+	border: none;
+	border-bottom: 1px solid #000;
+}
+
+form .seccionfrmCR .btnCr-E-R{
+	text-align: center;
+	text-decoration: none;
+	width: 40%;
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+.btnsv{
+	background-color: #79d70f;
+}
+
+.btnsv:hover{
+	background-color: #b6eb7a;
+}
+
+form .seccionfrmCR .enlace{
+	margin-top: 30px;
+	text-decoration: none;
+	color: #000;
+}
+
+form .seccionfrmCR a:hover{
+	text-decoration: underline;
+}
+
+form .seccionfrmCR .slctCr-E-R{
+	margin-top: 30px;
+}
+
+.btncnl{
+	background-color: #d32626;
+}
+
+.btncnl:hover{
+	text-decoration: none;
+	background-color: #e84a5f;
+}

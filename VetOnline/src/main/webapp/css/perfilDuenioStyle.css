@@ -285,3 +285,64 @@ Ventana Flotante Cambiar Foto Perfil (Dueño)
 	0%{opacity: 0;}
 	100%{transform: opacity: 1}
 }
+
+.containerDivMascotas{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 90%;
+	padding: 20px;
+	background-color: #6886c5;
+	border-radius: 20px;
+	border: 2px solid #FFF;
+	margin: 10px;
+}
+
+.containerDivMascotas .mascota{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	padding: 10px;
+	width: 30%;
+	background-color: #95389e;
+	border-radius: 20px;
+	border: 2px solid #000;
+	transition: all 200ms;
+}
+
+.mascota:hover{
+	transform: scale(1.1);
+	border: 2px solid #FFF;
+}
+
+.containerDivMascotas .mascota img{
+	width: 125px;
+}
+
+.containerDivMascotas .mascota .opcionesMascota{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.containerDivMascotas .mascota .opcionesMascota .btnOpcion{
+	text-decoration: none;
+	text-align: center;
+	padding: 5px;
+	width: 45%;
+	color: #FFF;
+	background-color: #0779e4;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.containerDivMascotas .mascota .opcionesMascota  .btnOpcion:hover{
+	background-color: #342ead;
+}

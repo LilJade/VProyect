@@ -23,6 +23,13 @@
 	especieDao eD = new especieDao();
 	razaDao rD = new razaDao();
 
+	String name = "";
+	String lName = "";
+	String direc = "";
+	String cor = "";
+	String con = "";
+	int ax = 0;
+
 	int numRz = 0;
 	int numEsp = 0;
 	int numMod = 0;
@@ -33,7 +40,18 @@
 	} else {
 		for (Priviligeduservp pvp:pvpD.datosPvp(variableSesion)) {
 			request.setAttribute("nombreAdm", pvp.getNombresPVP());
+			request.setAttribute("apellidos", pvp.getApellidosPVP());
+			request.setAttribute("dir", pvp.getDireccionPVP());
 			request.setAttribute("acceso", pvp.getAccessPVP());
+			request.setAttribute("correo", pvp.getCorreoPVP());
+			request.setAttribute("contra", pvp.getContraPVP());
+			
+			name = (String) request.getAttribute("nombreAdm");
+			lName = (String) request.getAttribute("apellidos");
+			direc = (String) request.getAttribute("dir");
+			cor = (String) request.getAttribute("correo");
+			con = (String) request.getAttribute("contra");
+			ax = (Integer) request.getAttribute("acceso");
 			
 			int accesso = (Integer) (request.getAttribute("acceso"));
 			if(accesso == 1) {
@@ -48,15 +66,44 @@
 		
 	}
 %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#optRn').hide();
+		$('#floatConfig').hide();
+		
+		$('#optStImg').click(function(){
+			$('#optSt').hide();
+			$('#optRn').show();
+			$('#floatConfig').show();
+			document.getElementsByTagName('body')[0].style.overflow = "hidden";
+		});
+		
+		$('#optRnImg').click(function(){
+			$('#optRn').hide();
+			$('#optSt').show();
+			$('#floatConfig').fadeOut();
+			document.getElementsByTagName('body')[0].style.overflow = "auto";
+		});
+		
+		$('#updateData').click(function(){
+		});
+	});
+</script>
 <body>
 	<header>
 		<div class="logo">
-			<img src="img/039-pet-house.png"> <a href="loginAdmin.jsp">HappyPet</a>
+			<img src="img/039-pet-house.png"><a href="loginAdmin.jsp">HappyPet</a>
 		</div>
 		<div class="menu">
 			<ul>
 				<li>
 					<a href="perfilAdmin.jsp">Panel de Administrador</a>
+				</li>
+				<li id="optSt">
+					<img id="optStImg" class="configBtn" src="img/ajustesAdm2.png">
+				</li>
+				<li id="optRn">
+					<img id="optRnImg" class="configBtn" src="img/ajustesAdm1.png">
 				</li>
 			</ul>
 		</div>
@@ -135,5 +182,68 @@
 			</div>
 		</div>
 	</div>
+	<div id="floatConfig" class="floatConfig">
+		<div class="container-fc">
+			<div class="head-fc">
+				<div class="logo-fc">
+					<img src="img/039-pet-house.png">
+					<h5>HappyPet</h5>
+				</div>
+				<form action="servletPrivUser" method="post">
+					<input type="submit" value="Cerrar Sesión" name="btn" class="btnClose-fc">
+<!-- 					<span class="closeMe-fc">&#x24E7;</span> -->
+				</form>
+			</div>
+			<div class="activity-fc">
+				<div class="latMenu-fc">
+					<ul>
+						<li>
+							<span id="updateData">Configurar Datos</span>
+						</li>
+						<li>
+							<span>Cambiar estilo de Interfaz</span>
+						</li>
+						<li>
+							<span>Agregar nuevo Admin</span>
+						</li>
+					</ul>
+				</div>
+				<div class="contenedor-fc">
+					<div id="updateData-panel" class="updateData-fc">
+						<form class="frmData" action="servletPrivUser" method="post">
+							<label class="rotulo">Mis nombres: </label>
+							<input id="nombresUD" type="text" class="control" name="nUD" placeholder="Escribe ambos nombres...">
+							<label class="rotulo">Mis apellidos: </label>
+							<input id="apellidosUD" type="text" class="control" name="aUD" placeholder="Escribe ambos apellidos...">
+							<label class="rotulo">Dirección dónde se encuentra HappyPet: </label>
+							<input id="direccionUD" type="text" class="control" name="dUD" placeholder="Escribe la dirección de HappyPet....">
+							<label class="rotulo">Mi nuevo correo electrónico: </label>
+							<input id="correoUD" type="text" class="control" name="cUD" placeholder="">
+							<label class="rotulo">Mi nueva contraseña: </label>
+							<input id="passwordUD" type="text" class="control" name="pUD" placeholder="">
+							<input id="accessUD" type="textn" class="control" name="axUD" placeholder="">
+							<label class="rotulo">A continuación debes ingresar tu contraseña actual para poder guardar los cambios: </label>
+							<input id="passConfirm" type="text" class="control" name="" placeholder="">
+							<div class="frmOpt">
+								<span id="btnCancelUD" class="btnClose-fc">Cancelar</span>
+								<input id="btnSendUD" type="submit" name="btn" value="Save All" class="btnClose-fc oc-fc">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#nombresUD').val("<%= name%>");
+		$('#apellidosUD').val("<%= lName%>");
+		$('#direccionUD').val("<%= direc%>");
+		$('#correoUD').val("<%= cor%>");
+		$('#passwordUD').val("<%= con%>");
+		$('#accessUD').val("<%= ax%>");
+	</script>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

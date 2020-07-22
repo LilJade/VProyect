@@ -1,6 +1,7 @@
 package com.vp.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,7 +9,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import com.vp.model.Priviligeduservp;
+
 public class priviligedUserDao {
+
 	public List<Priviligeduservp> logInPV(Priviligeduservp pv){
 		List<Priviligeduservp> privU = new ArrayList<>();
 		EntityManager em;
@@ -30,6 +33,33 @@ public class priviligedUserDao {
 		}
 		
 		return privU;
+	}
+	
+	 public boolean actualizarPVP(Priviligeduservp prv){
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf= Persistence.createEntityManagerFactory("VetOnline");
+		em = emf.createEntityManager();
+		
+		prv.getIdPVP();
+		prv.getNombresPVP();
+		prv.getApellidosPVP();
+		prv.getDireccionPVP();
+		prv.getCorreoPVP();
+		prv.getContraPVP();
+		prv.getAccessPVP();
+		
+		try {
+			em.getTransaction().begin();
+			em.merge(prv);
+			em.flush();
+			em.getTransaction().commit();
+			
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 	
 	public List<Priviligeduservp> datosPvp(String id){
